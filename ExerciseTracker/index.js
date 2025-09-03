@@ -97,30 +97,6 @@ app.get('/api/users/:_id/logs', (req, res) => {
   res.json(parameterized_log);
 });
 
-// app.get('/api/users/:_id/logs', (req, res) => {
-//   let from = req.query.from ? new Date(req.query.from) : null;
-//   let to = req.query.to ? new Date(req.query.to) : null;
-//   let limit = req.query.limit ? parseInt(req.query.limit) : null;
-//   let log = logs.find(user => user._id === req.params._id).log;
-//   if (from) {
-//     log = log.filter(e => new Date(e.date) >= from);
-//   }
-//   if (to) {
-//     log = log.filter(e => new Date(e.date) <= to);
-//   }
-//   if (limit) {
-//     log = log.slice(0, limit);
-//   }
-//   logs.forEach(user => {
-//     if (user._id === req.params._id) {
-//       user['log'] = log;
-//       user['count'] = log.length;
-//     }
-//   });
-//   console.log(logs.find(user => user._id === req.params._id));
-//   res.json(logs.find(user => user._id === req.params._id))
-// });
-
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
 })
